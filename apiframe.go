@@ -68,7 +68,7 @@ func (c *ApiframeClient) postRequest(endpoint string, data interface{}) (map[str
 	return result, nil
 }
 
-func (c *ApiframeClient) imagine(prompt string, aspectRatio string, processMode string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Imagine(prompt string, aspectRatio string, processMode string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"prompt":        prompt,
 		"aspect_ratio":  aspectRatio,
@@ -79,7 +79,7 @@ func (c *ApiframeClient) imagine(prompt string, aspectRatio string, processMode 
 	return c.postRequest("/imagine", data)
 }
 
-func (c *ApiframeClient) upscale1x(parentTaskID string, index string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Upscale1x(parentTaskID string, index string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"index":          index,
@@ -89,7 +89,7 @@ func (c *ApiframeClient) upscale1x(parentTaskID string, index string, webhookURL
 	return c.postRequest("/upscale-1x", data)
 }
 
-func (c *ApiframeClient) upscaleAlt(parentTaskID string, upscaleType string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) UpscaleAlt(parentTaskID string, upscaleType string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"type":           upscaleType,
@@ -99,7 +99,7 @@ func (c *ApiframeClient) upscaleAlt(parentTaskID string, upscaleType string, web
 	return c.postRequest("/upscale-alt", data)
 }
 
-func (c *ApiframeClient) upscaleHighres(parentTaskID string, upscaleType string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) UpscaleHighres(parentTaskID string, upscaleType string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"type":           upscaleType,
@@ -109,7 +109,7 @@ func (c *ApiframeClient) upscaleHighres(parentTaskID string, upscaleType string,
 	return c.postRequest("/upscale-highres", data)
 }
 
-func (c *ApiframeClient) reroll(parentTaskID string, prompt string, aspectRatio string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Reroll(parentTaskID string, prompt string, aspectRatio string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"prompt":         prompt,
@@ -120,7 +120,7 @@ func (c *ApiframeClient) reroll(parentTaskID string, prompt string, aspectRatio 
 	return c.postRequest("/reroll", data)
 }
 
-func (c *ApiframeClient) variations(parentTaskID string, index string, prompt string, aspectRatio string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Variations(parentTaskID string, index string, prompt string, aspectRatio string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"index":          index,
@@ -132,7 +132,7 @@ func (c *ApiframeClient) variations(parentTaskID string, index string, prompt st
 	return c.postRequest("/variations", data)
 }
 
-func (c *ApiframeClient) inpaint(parentTaskID string, mask string, prompt string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Inpaint(parentTaskID string, mask string, prompt string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"mask":           mask,
@@ -143,7 +143,7 @@ func (c *ApiframeClient) inpaint(parentTaskID string, mask string, prompt string
 	return c.postRequest("/inpaint", data)
 }
 
-func (c *ApiframeClient) outpaint(parentTaskID string, zoomRatio string, aspectRatio string, prompt string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Outpaint(parentTaskID string, zoomRatio string, aspectRatio string, prompt string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"zoom_ratio":     zoomRatio,
@@ -155,7 +155,7 @@ func (c *ApiframeClient) outpaint(parentTaskID string, zoomRatio string, aspectR
 	return c.postRequest("/outpaint", data)
 }
 
-func (c *ApiframeClient) pan(parentTaskID string, direction string, prompt string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Pan(parentTaskID string, direction string, prompt string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"parent_task_id": parentTaskID,
 		"direction":      direction,
@@ -166,7 +166,7 @@ func (c *ApiframeClient) pan(parentTaskID string, direction string, prompt strin
 	return c.postRequest("/pan", data)
 }
 
-func (c *ApiframeClient) describe(imageURL string, processMode string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Describe(imageURL string, processMode string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"image_url":     imageURL,
 		"process_mode":  processMode,
@@ -176,7 +176,7 @@ func (c *ApiframeClient) describe(imageURL string, processMode string, webhookUR
 	return c.postRequest("/describe", data)
 }
 
-func (c *ApiframeClient) blend(imageURLs []string, dimension string, processMode string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Blend(imageURLs []string, dimension string, processMode string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"image_urls":    imageURLs,
 		"dimension":     dimension,
@@ -187,7 +187,7 @@ func (c *ApiframeClient) blend(imageURLs []string, dimension string, processMode
 	return c.postRequest("/blend", data)
 }
 
-func (c *ApiframeClient) seed(taskID string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Seed(taskID string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"task_id":       taskID,
 		"webhook_url":   webhookURL,
@@ -196,7 +196,7 @@ func (c *ApiframeClient) seed(taskID string, webhookURL string, webhookSecret st
 	return c.postRequest("/seed", data)
 }
 
-func (c *ApiframeClient) faceswap(targetImageURL string, swapImageURL string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Faceswap(targetImageURL string, swapImageURL string, webhookURL string, webhookSecret string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"target_image_url": targetImageURL,
 		"swap_image_url":   swapImageURL,
@@ -206,21 +206,21 @@ func (c *ApiframeClient) faceswap(targetImageURL string, swapImageURL string, we
 	return c.postRequest("/faceswap", data)
 }
 
-func (c *ApiframeClient) fetch(taskID string) (map[string]interface{}, error) {
+func (c *ApiframeClient) Fetch(taskID string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"task_id": taskID,
 	}
 	return c.postRequest("/fetch", data)
 }
 
-func (c *ApiframeClient) fetchMany(taskIDs []string) (map[string]interface{}, error) {
+func (c *ApiframeClient) FetchMany(taskIDs []string) (map[string]interface{}, error) {
 	data := map[string]interface{}{
 		"task_ids": taskIDs,
 	}
 	return c.postRequest("/fetch-many", data)
 }
 
-func (c *ApiframeClient) account() (map[string]interface{}, error) {
+func (c *ApiframeClient) Account() (map[string]interface{}, error) {
 	url := fmt.Sprintf("%s/account", c.baseURL)
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
